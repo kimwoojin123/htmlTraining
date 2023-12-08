@@ -1,84 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    *{margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      width: 100vw;
-      height:100vh;
-      background-color:#4A4A4A;
-      display:flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .mainDiv{
-      width: 95vw;
-      height: 80vh;
-      display : flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .topDiv {
-      width:95vw;
-      height:38.5vh;
-      background-color: #D9D9D9;
-      display:flex;
-    }
-    .bottomDiv {
-      width:95vw;
-      height:38.5vh;
-      background-color: #D9D9D9;
-      display: flex;
-    }
-    .leftArea {
-      width:35vw;
-    }
-    .rightArea{
-      width:60vw;
-    }
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-
-  <script>
-    function component(type, props, ...children) {
-        const element = document.createElement(type);
-          for (const prop in props) {
-          if (props.hasOwnProperty(prop)) {
-            element[prop] = props[prop];
-          }
-        }
-        children.forEach(child => {
-          if (typeof child === 'string') {
-            element.appendChild(document.createTextNode(child));
-          } else {
-            element.appendChild(child);
-          }
-        });
-        return element;
-    }
-
-
-
-  
-
-
-    const root = document.getElementById('root');
-    const topLeftArea = component('div',{className : "leftArea"});
-    const topRightArea = component('div',{className : "rightArea"});
-    const bottomLeftArea = component('div',{className : "leftArea"});
-    const bottomRightArea = component('div',{className : "rightArea"});
-    const topDiv = component('div',{className:"topDiv"}, topLeftArea, topRightArea);
-    const bottomDiv = component('div', {className:"bottomDiv"}, bottomLeftArea, bottomRightArea);
-    const mainDiv = component('div', {className: "mainDiv"}, topDiv, bottomDiv);
-    root.appendChild(mainDiv);
-
-
-  </script>
-</body>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Webpack App</title>
+    </head>
+    <body>
+        <h1>Hello world!</h1>
+        <h2>Tip: Check your console</h2>
+    </body>
+    
 </html>
